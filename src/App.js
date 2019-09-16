@@ -8,14 +8,13 @@ import TestSummary from "./components/Testcasepage/Testsummary"
 import Execute from "./components/Testexecutionandresults/Testcaseexecutionresults";
  import HomePage from "./components/Homepage/Homepage";
  import Footer from "./components/Footer/Footer";
- import Toolbar from "./components/Toolbar/Toolbar"
-
+ 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Toolbar/>
+        
         <BrowserRouter>
            <Route path="/" exact component={HomePage}/> 
           <Route path="/dashboard"  component={Dashboard} />

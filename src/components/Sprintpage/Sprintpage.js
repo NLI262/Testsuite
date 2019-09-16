@@ -5,7 +5,7 @@ import { Card, Button } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Modulecreate from "../Modulecreate/Modulecreate";
 import TestCase from "../Testcasepage/Testcasepage.js";
-
+import Toolbar from "../Toolbar/Toolbar"
 import TestCaseCreate from "../Testcasepage/Testcasecreate.js";
 
 export default class SprintPage extends Component {
@@ -66,7 +66,7 @@ export default class SprintPage extends Component {
       <div>
         <div>
           
-          
+        <Toolbar/>
           <br></br>
 
           <Modulecreate

@@ -5,6 +5,7 @@ import Display from "./Display.js";
 import "./Dashboard.css";
 
 
+
 export default class Dashboard extends React.Component {
   state = {
     sideDrawerOpen: true

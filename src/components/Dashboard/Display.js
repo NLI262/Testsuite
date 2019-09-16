@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardDeck, CardColumns } from "react-bootstrap";
+import { Card, CardColumns } from "react-bootstrap";
 import Createproject from "./Createproject.js";
 import { Link } from "react-router-dom";
 import Editproject from "./Editproject.js";
@@ -118,7 +118,7 @@ export default class Display extends React.Component {
       return (
         <section>
          
-        <h4 className="project" style={{textAlign:"20px"}}>Recent Projects </h4>  
+       
           <InputGroup size="sm" style={{ width: "600px" , left:"420px" ,  borderRadius: "25px"}}>
           <InputGroup.Prepend>
       <InputGroup.Text id="basic-addon1"><i class="fas fa-search"></i></InputGroup.Text>
@@ -222,7 +222,7 @@ export default class Display extends React.Component {
               className="load"
               onClick={this.loadMore}           // load more function declared to display only few projects
               type="button"
-              className="load-more"
+              
               variant="primary"
             >
               Load more

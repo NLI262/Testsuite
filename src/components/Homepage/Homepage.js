@@ -68,13 +68,13 @@ class HomePage extends Component {
             <br />
             <img
               src="https://www.nineleaps.com/wp-content/themes/nineleaps/assets/img/nineleaps-logo.svg"
-              height="60px"
+              height="60px" alt="nineleaps"
             ></img>
             <br></br>
             <br></br>
             <img
               src="https://media.glassdoor.com/l/5b/74/79/fe/nineleaps-placed-top-10-out-of-the-top-25-start-ups-in-india-for-2018.jpg"
-              height="270px"
+              height="270px" alt="nineleaps"
             ></img>
             <br></br>
             <br></br>

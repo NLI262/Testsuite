@@ -2,7 +2,7 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Modal, Button, Table } from "antd";
 import { Card } from 'antd';
-import { Input ,TextArea} from 'antd';
+import { Input } from 'antd';
 
 export default class TestSummary extends React.Component{
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import TSMaxios from "../Axios/TSMaxios";
 import { Button, Spinner } from "react-bootstrap";
-
+import Toolbar from "../Toolbar/Toolbar"
 import ChartForEachProject from "./Chartforeachproject";
 import Sprintcreate from "../Sprintpage/Sprintcreate.js";
 import "./Projectpage.css";
@@ -85,7 +85,7 @@ export default class ProjectPage extends React.Component {
     const { sprintList } = this.state;
     const post = this.state.post ? (
       <div className="post">
-       
+       <Toolbar/>
         <br></br>
         <br></br>
         <br></br>
