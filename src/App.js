@@ -7,7 +7,6 @@ import SprintPage from "./components/Sprintpage/Sprintpage"
 import TestSummary from "./components/Testcasepage/Testsummary"
 import Execute from "./components/Testexecutionandresults/Testcaseexecutionresults";
  import HomePage from "./components/Homepage/Homepage";
- import Footer from "./components/Footer/Footer";
  
 
 class App extends Component {
@@ -23,7 +22,7 @@ class App extends Component {
            <Route  path ="/testcase/:testid"  component ={TestSummary}/> 
            <Route  path ="/testexecution/:testid" component ={Execute}/>
         </BrowserRouter>
-        <Footer/>
+        
       </div>
     );
   }

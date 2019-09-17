@@ -3,6 +3,7 @@ import Display from "./Display.js";
  import Toolbar from "../Toolbar/Toolbar.js";
 // import Sidedrawer from "../Sidedrawer/Sidedrawer.js";
 import "./Dashboard.css";
+import Footer from "../Footer/Footer"
 
 
 
@@ -39,7 +40,7 @@ export default class Dashboard extends React.Component {
         </div>
         
       
-            
+         <Footer/>   
       </div>
     );
   }

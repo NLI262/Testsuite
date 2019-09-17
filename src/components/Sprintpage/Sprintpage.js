@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
+import Footer from "../Footer/Footer.js";
 import TSMaxios from "../Axios/TSMaxios";
 import { Card, Button } from "react-bootstrap";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col ,Spinner } from "react-bootstrap";
 import Modulecreate from "../Modulecreate/Modulecreate";
 import TestCase from "../Testcasepage/Testcasepage.js";
 import Toolbar from "../Toolbar/Toolbar"
@@ -132,14 +132,27 @@ export default class SprintPage extends Component {
                 </Button>
               </Card.Body>
             </Card>
+          
           );
         })}
+        <Footer/>
       </div>
     ) : (
-      <div className="center">
+      <div>
         {" "}
-        <p>loading...</p>
-        <i class="fa fa-spinner fa-spin"></i>
+        <Spinner style={{
+
+    position: "absolute",
+    height: "50px",
+    width: "50px",
+    top: "50%",
+    left: "50%",
+    marginLeft: "-50px",
+    marginTop:"-50px",
+   
+    backgroundSize:" 100%"
+
+        }} animation="border" />
       </div>
     );
 

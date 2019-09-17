@@ -7,6 +7,7 @@ import Sprintcreate from "../Sprintpage/Sprintcreate.js";
 import "./Projectpage.css";
 import { CardColumns, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer.js"
 
 
 export default class ProjectPage extends React.Component {
@@ -181,6 +182,7 @@ export default class ProjectPage extends React.Component {
             );
           })}
         </CardColumns>
+        <Footer/>
       </div>
     ) : (
      
