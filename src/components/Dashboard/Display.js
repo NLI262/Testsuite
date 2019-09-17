@@ -137,7 +137,9 @@ export default class Display extends React.Component {
               <Card style={{ width: "24rem", height: "10rem" , boxShadow:" 1px 1px #CCCCCC"}}>                       
                 <Card.Body>
                   
-                  <br></br>
+                  
+                  <p style={{ borderStyle: "dashed", borderWidth:"2px", height: "120px", width :"340px"}}>
+                    <p style={{padding:"30px"}}>
                   <Button
                    
                     onClick={() => this.setState({ addModalShow: true })}
@@ -145,6 +147,8 @@ export default class Display extends React.Component {
                   >
                    <i class="fas fa-plus fa-2x"></i>
                   </Button>
+                  </p>
+                  </p>
                 </Card.Body>
               </Card>
 
