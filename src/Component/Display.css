@@ -3,62 +3,92 @@
     padding-top: 120px;
 }
 .form-group-list{
-    padding-top: auto ;     
+    font-style: inherit;
+    margin: 0%
 }
 .sky{
     float: right;
-    padding-right: 10px;
-}
-.shape{
-    padding-left:400px ;
-    padding-top:0px 
-}
-.file{
-    padding: 10px;
+    padding-right: 10px; 
+    text-align:center
 }
 
-.form-group-right{
-    width: 700px;
+.file{
+    padding: 10px;
+    font-weight: bold
 }
-.navstyle{
-    color:blue;
-}
+/* .navstyle{
+    color:#197EFF;
+} */
 .bg-light {
-    background-color: #71ade8!important;
+    background-color: #197EFF!important;
 }
-a{
+/* a{
    color: #fbfdff
-}
+} */
 .fot{
     text-align: center
 }
 .foot{
-    background-Color: #71ade8
+    background-Color: #197EFF
 }
-ul {
+ ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #71ade8;
-    overflow: hidden;
+
   }
+
+  /* li {
+      font-size: 0px;
+      /* margin-right: 35px; */
+  
   
   li a {
     display: inline-block;
     color: black;
-    
     text-decoration: none;
     text-align: center;
   }
   
   li a.active {
-    background-color: white;
+    background-color: white; 
     color:black;
   }
 
-  
   li a:hover:not(.active) {
-    background-color: white;
+    background-color: white; 
     color: black;
   }
-  
+
+  a.active {
+      background-color: white; 
+  } 
+  .ant-table-thead > tr > th{
+      font-weight: bold; 
+      font-size: medium;
+      background-color: lightgrey;
+  }
+  .form-group-item{
+      width: 600px;
+      height: 300px; 
+      float: right;
+      margin-top: 20px;  
+  }
+
+  p.sky{
+      margin-bottom: 0px
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.navbar{
+    padding: 3px
+}
+.aaa{
+    position: static;
+    position: relative;
+    top: -60px;
+    display: inline-block; 
+    margin-left: 95px;   
+}
+

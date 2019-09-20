@@ -5,7 +5,7 @@ import { Table } from 'antd';
 //import Piechart from "./Piechart.js";
 import Editproject from './Editproject.js'
 import './Display.css'
-import { Row, Col ,Button } from 'antd';
+import { Row, Col, Button } from 'antd';
 import Pchart from "./Pchart.js"
 
 export default class Overview extends Component {
@@ -22,7 +22,7 @@ export default class Overview extends Component {
     //chartData:{},
     //dataFromDB: [  ]
     // })
-  }
+  } Totalcomplete
   componentDidMount = () => {
     // axios.get('')
     // .then(response => {
@@ -45,95 +45,98 @@ export default class Overview extends Component {
 
       },
       {
-        title: 'Totalassigned',
-        dataIndex: 'Totalassigned',
-        key: 'Totalassigned',
+        title: 'Total Assigned',
+        dataIndex: 'TotalAssigned',
+        key: 'TotalAssigned',
       },
       {
-        title: 'Totalcomplete',
-        dataIndex: 'Totalcomplete',
-        key: 'Totalcomplete',
+        title: 'Total Complete',
+        dataIndex: 'TotalComplete',
+        key: 'TotalComplete',
       },
+      {
+        title: 'Total Not Executed',
+        dataIndex: 'TotalNotExecuted',
+        key: 'TotalNotExecuted',
+      }
     ];
     const data = [
       {
         key: '1',
-        Name: 'vhsvh',
-        Totalassigned: '10',
-        Totalcomplete: '6',
-
+        Name: 'shinu',
+        TotalAssigned: '10',
+        TotalComplete: '6',
+        TotalNotExecuted: '4',
       },
       {
         key: '2',
-        Name: 'ereg',
-        Totalassigned: '10',
-        Totalcomplete: '5',
-
+        Name: 'krishna',
+        TotalAssigned: '10',
+        TotalComplete: '5',
+        TotalNotExecuted: '5',
       },
       {
         key: '3',
-        Name: 'tcyi',
-        Totalassigned: '10',
-        Totalcomplete: '9',
-
+        Name: 'shanthi',
+        TotalAssigned: '10',
+        TotalComplete: '9',
+        TotalNotExecuted: '1',
       },
       {
         key: '4',
-        Name: 'vhsvh',
-        Totalassigned: '10',
-        Totalcomplete: '7 ',
-
+        Name: 'mannan',
+        TotalAssigned: '10',
+        TotalComplete: '7 ',
+        TotalNotExecuted: '3',
       },
       {
         key: '5',
-        Name: 'vhsvh',
-        Totalassigned: '10',
-        Totalcomplete: '9',
-
+        Name: 'harsha',
+        TotalAssigned: '10',
+        TotalComplete: '9',
+        TotalNotExecuted: '1',
       },
-     
+      {
+        key: '6',
+        Name: 'dj bhaiya',
+        TotalAssigned: '10',
+        TotalComplete: '8',
+        TotalNotExecuted: '2',
+      },
 
     ];
     return (
-      <div className = "file">
+      <div className="file">
         <Row>
           <Col lg={12} md={12} sm={12} xs={12}>
-          <div className = "shape">
-              <Editproject />
-              </div>
             <div className="form-group-list">
-              <h5>Uber</h5>
-            </div>
-            <div>
+              <h1>Uber</h1><Editproject />
               <h5>Hello cab world</h5>
-            </div>
-            <div>
               <h5>Modified By:17/09/2019</h5>
-            </div>
-            <div>
               <h5>Modified Date:krishna prasad samal</h5>
             </div>
           </Col>
-          <div className = "sky" >
-          <Button type="primary" >
-            <p style ={{textAlign:"center"}}>Users & Roles</p>
-        </Button>
+          <div className="sky" >
+            <Button type="primary" >
+              <p>Users & Roles</p>
+            </Button>
           </div>
-          <Col lg={12} md={12} sm={12} xs={12}>
-            <div className="form-group-item">
-              {/* <Piechart /> */}
-              <Pchart/>
-            </div>
-          </Col>
-          </Row>
-          <Row>
-          <Col lg={24} md={24} xs={24} sm={24}>
+
+          <div className="form-group-item">
+            {/* <Piechart /> */}
+            <Pchart />
+          </div>
+
+        </Row>
+        <Row>
+          <Col lg={14} md={14} sm={14} xs={14}>
             <div className="form-group-right">
               <h1>Team Analysis</h1>
               <Table columns={columns} dataSource={data} bordered />
             </div>
           </Col>
         </Row>
+
       </div>
     )
   }

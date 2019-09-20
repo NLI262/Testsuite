@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Modal, Button } from 'antd';
-import { relative } from 'path';
+
 
 
 export default class Editproject extends Component {
@@ -10,7 +10,6 @@ export default class Editproject extends Component {
     this.onChangeprojectTitle = this.onChangeprojectTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
     this.state = {
       projectTitle: '',
       Description: ''
@@ -79,9 +78,10 @@ export default class Editproject extends Component {
   render() {
     return (
         <div>
-            <Button style={{position: "absolute"}} type="outline-secondary" onClick={this.showModal}>
-            <i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i>
+            <Button className="aaa"  type="outline-secondary" onClick={this.showModal}>
+            <i class="fa fa-pencil-square-o fa-1x " aria-hidden="true"></i>
         </Button>
+       
         <Modal
           title="Edit Project"
           visible={this.state.visible}
@@ -111,8 +111,7 @@ export default class Editproject extends Component {
                 </div>
             </form>
         </div>
-        </Modal>
-        </div>
+        </Modal></div>
     )
   }
 }

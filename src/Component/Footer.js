@@ -8,10 +8,10 @@ export default class Footer extends Component{
             <div className = "foot" >
                 <div className = "fot">
                 <a href="https://www.nineleaps.com/privacy-policy">
-                <font color="#2980B9">Privacy Policy</font>
+                <font color="white">Privacy Policy</font>
             </a>
             </div>
-            <p style = {{textAlign : "center", backgroundColor: "#71ade8"}}>© 2019 Nineleaps</p>
+            <p style = {{textAlign : "center", backgroundColor: "#197EFF"}}>© 2019 Nineleaps</p>
             </div>
         )
     }

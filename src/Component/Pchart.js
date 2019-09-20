@@ -7,7 +7,6 @@ export default class Pchart extends Component{
     super(props);
     this.state = {
       chartData : {
-        labels:['passed','failed','notexecuted','blocked'],
         datasets:[
           {
           labels: 'status',
@@ -19,7 +18,8 @@ export default class Pchart extends Component{
             'rgba(75,192,192,0.6)',
           ]
         }
-        ]
+        ],
+        labels:['Passed','Failed','Not Executed','Blocked'],
       }
     }
   }
@@ -28,13 +28,11 @@ export default class Pchart extends Component{
     return(
       <div className ="chart">
        <Pie 
-       data ={this.state.chartData
-    }
-       option={{
-       
+       data ={this.state.chartData}
+       options={{
          legend:{
            display:true,
-           position: 'bottom'
+           position:'right',
          },
          title:{
             diplay:true,
@@ -42,6 +40,7 @@ export default class Pchart extends Component{
             fontSize: 25
           }
        }}
+      
        />
       </div>
     );

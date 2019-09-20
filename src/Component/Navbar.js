@@ -8,6 +8,28 @@ import Overview from './Overview.js';
 import './Display.css'
 
 export default class Navbar extends Component {
+ 
+  componentDidMount(){
+    this.myFunction();
+  }
+    myFunction ()  {
+    var header = document.getElementById("kites");
+    var btns = header.getElementsByClassName("btn");
+    var x = document.getElementById("myTopnav");
+    if (x.className === "kites") {
+      x.className += " responsive";
+    } else {
+      x.className = "kites";
+    }
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+      });
+   }
+  }
+
   render() {
     return (
       <div >
@@ -15,13 +37,15 @@ export default class Navbar extends Component {
           <div >
             <h2>Testsuite management</h2>
             <nav className="navbar navbar-expand-lg navbar-light-blue bg-light" >
-              <ul className="navbar-nav mr-auto">
-                <li ><Link to={'/Dashboard'} className="nav-link"><a >Dashboard</a></Link></li>
-                <li ><Link to={'/Overview'} className="nav-link" Primary><a>Overview</a></Link></li>
-                <li ><Link to={'/Testcase'} className="nav-link"><a>Testcase</a></Link></li>
-                <li ><Link to={'/Testrun'} className="nav-link"><a>Testrun</a></Link></li>
-                <li ><Link to={'/Viewalltestcase'} className="nav-link"><a>History</a></Link></li>
+              <div className = "myTopnav" id="kites" >
+              <ul className="navbar-nav mr-auto ">
+                <li className="nav-item"><Link to={'/Dashboard'} onClick={this.myFunction} className="nav-link"><a className="btn active">Dashboard</a></Link></li>
+                <li className="nav-item"><Link to={'/Overview'} onClick={this.myFunction}  className="nav-link" Primary><a className="btn">Overview</a></Link></li>
+                <li className="nav-item"><Link to={'/Testcase'} onClick={this.myFunction} className="nav-link"><a className="btn">Testcase</a></Link></li>
+                <li className="nav-item"><Link to={'/Testrun'} onClick={this.myFunction} className="nav-link"><a className="btn">Testrun</a></Link></li>
+                <li className="nav-item"><Link to={'/Viewalltestcase'} onClick={this.myFunction} className="nav-link"><a className="btn">History</a></Link></li>
               </ul>
+              </div>
             </nav>
             <hr />
             <Switch>
