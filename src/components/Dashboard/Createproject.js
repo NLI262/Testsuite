@@ -3,17 +3,20 @@ import TSMaxios from "../Axios/TSMaxios";
 import { Form, Col } from "react-bootstrap";
 import { Modal, Button } from "react-bootstrap";
 
+
 export default class Createproject extends React.Component {
   state = {
     projectTitle: "",
     projectDescription: "",
-    startDate: "",
-  
-    googleAutheticationId: localStorage.getItem("tokenid")
+    
+    googleAutheticationId: localStorage.getItem("tokenid"),
+    validated: false,
+    setValidated: false
   };
-  onSubmit = e => {
+  
+  handleSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
+    
     TSMaxios
       .post("/TSM/project/add", this.state)
       .then(response => {
@@ -33,6 +36,7 @@ export default class Createproject extends React.Component {
       // });
   };
 
+
   render() {
     let addModalClose = () => this.setState({ addModalShow: false });
     return (
@@ -48,60 +52,58 @@ export default class Createproject extends React.Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
-            <Form>
+          
+            <Form  onSubmit={this.handleSubmit}>
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label>Project Title</Form.Label>
+                  <span>Project Title</span>
                   <Form.Control
+                     required
                     type="text"
-                    placeholder="Title of Your Project"
+                    placeholder=""
                     value={this.state.value}
                     onChange={e =>
                       this.setState({ projectTitle: e.target.value })
                     }
-                  />
+                   />
+                   <Form.Control.Feedback type="invalid">
+            Please provide a valid title
+          </Form.Control.Feedback>
+                   
                 </Form.Group>
+                </Form.Row>
+                <Form.Row>
                 <Form.Group as={Col} controlId="formGridPassword">
-                  <Form.Label>Project Description</Form.Label>
+                  <span>Project Description</span>
                   <Form.Control
+                   required
                     type="text area"
                     as="textarea"
                     rows="3"
-                    placeholder="Project Description"
+                    placeholder=""
                     value={this.state.value}
                     onChange={e =>
                       this.setState({ projectDescription: e.target.value })
                     }
                   />
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
-                <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label>Start Date</Form.Label>
-                  <Form.Control
-                    type="date"
-                    placeholder="Enter Start date"
-                    value={this.state.value}
-                    onChange={e => this.setState({ startDate: e.target.value })}
-                  />
-                </Form.Group>
+                </Form.Row>
 
-              
-              </Form.Row>
-            </Form>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={async () => await this.props.onHide(this.state)}>       
+             <div style={{marginLeft: "36rem"}} >
+            <Button  onClick={async () => await this.props.onHide(this.state)}>       
             {" "}
             Cancel
           </Button>
-          <Button variant="primary" onClick={e => this.onSubmit(e)}>       
+             &nbsp; &nbsp;
+          <Button  variant="primary" type="submit">       
             {" "}
             Save
           </Button>
-        </Modal.Footer>
+          </div>
+            </Form>
+        
+        </Modal.Body>
+       
       </Modal>
     );
   }

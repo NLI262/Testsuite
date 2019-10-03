@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Homepage.css";
 import TSMaxios from "../Axios/TSMaxios";
-import firebase from "firebase";
+import firebase from 'firebase/app';
 import { StyledFirebaseAuth } from "react-firebaseui";
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDTq9Mm0X5-QbJO7h188WaW4jefA58xDD0",
-  authDomain: "test-suite-management.firebaseapp.com"
-});
+// firebase.initializeApp({
+//   apiKey: "AIzaSyDTq9Mm0X5-QbJO7h188WaW4jefA58xDD0",
+//   authDomain: "test-suite-management.firebaseapp.com"
+// });
 
 class HomePage extends Component {
   state = { isSignedIn: false };
@@ -35,6 +35,7 @@ class HomePage extends Component {
         } = firebase.auth().currentUser;
         localStorage.setItem("username", displayName);
         localStorage.setItem("tokenid", uid);
+        localStorage.setItem("display", photoURL);
         var JSONobj = {
           name: displayName,
           email: email,

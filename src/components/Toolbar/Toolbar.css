@@ -1,9 +1,28 @@
 .toolbar{
-position: absolute;
+/* position: static;
 top:0;
 left:0;
 width:100%;
 height:56px ;
+background-color:#197EFF; */
+
+/* background-color:;
+font-size: 15px;
+
+text-align: center;
+position: static;
+left: 0;
+top: 0;
+height: 56px;
+width: 100%; */
+position:fixed; /* fixing the position takes it out of html flow - knows
+nothing about where to locate itself except by browser
+coordinates */
+left:0;			/* top left corner should start at leftmost spot */
+top:0;			/* top left corner should start at topmost spot */
+width:100%;		/* take up the full browser width */
+z-index:200;	/* high z index so other content scrolls underneath */
+height:56px; 	/* define height so you can define for content */
 background-color:#197EFF;
 
 }
@@ -48,6 +67,7 @@ height:20px;
 .toolbar_navigation-items li{
     padding:0 0.5rem;
     color: white;
+
 }
 .spacer{
     flex:1;

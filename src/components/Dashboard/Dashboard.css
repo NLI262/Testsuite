@@ -24,6 +24,7 @@ order:3;
 }
 .column-layout{
     display:flex;
+    
  
 }
 .main-column{
@@ -52,16 +53,16 @@ order:3;
 }
 .project{
     
-    background-color:whitesmoke;
+
     color:rgb(14,143,212);
     text-align:'justify';
-    box-shadow: 1px 2px whitesmoke;
+    
    
     
 
 }
 .cardstyle{
-    box-shadow: 1px 1px #CCCCCC;
+    box-shadow: 1px 1px 1.5px 1.5px #CCCCCC;
 }
 
 

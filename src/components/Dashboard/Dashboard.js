@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer"
 
 
 
+
 export default class Dashboard extends React.Component {
   state = {
     sideDrawerOpen: true
@@ -25,19 +26,16 @@ export default class Dashboard extends React.Component {
     // }
 
     return (
-      <div style={{ width: "100%" }}>
-          <Toolbar drawerClickHandler={this.drawOpenClickHandler} />
-        {/* <Sidedrawer show={sideDrawerOpen} />  */}
-        <main style={{ marginTop: "64px" }}>
+      <div style={{ width: "100%", overflow:"hidden", margin: "0 auto" }}>
+         <div> <Toolbar  /></div>
+      
           
+           <div style={{ marginTop: "3rem" }}> 
 
           <Display />
-          <br></br>
-        </main>
-        <div>
-          {" "}
+           </div> 
+       
           
-        </div>
         
       
          <Footer/>   

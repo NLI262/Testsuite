@@ -9,8 +9,7 @@ export default class Editproject extends React.Component {
       id: "",
       projectTitle: "",
       projectDescription: "",
-      startDate: "",
-      endDate: "",
+      
       googleAutheticationId: localStorage.getItem("tokenid")
     };
     this.handleChange = this.handleChange.bind(this);
@@ -92,7 +91,7 @@ export default class Editproject extends React.Component {
               <Form>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Project Title</Form.Label>
+                    <span>Project Title</span>
                     <Form.Control
                       type="text"
                       placeholder="Title of Your Project"
@@ -101,8 +100,10 @@ export default class Editproject extends React.Component {
                       name="projectTitle"
                     />
                   </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
                   <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Project Description</Form.Label>
+                    <span>Project Description</span>
                     <Form.Control
                       type="text area"
                       as="textarea"
@@ -114,29 +115,7 @@ export default class Editproject extends React.Component {
                     />
                   </Form.Group>
                 </Form.Row>
-                <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Start Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      placeholder="Enter Start date"
-                      value={this.state.startDate}
-                      name="startDate"
-                      onChange={this.handleChange}
-                    />
-                  </Form.Group>
-
-                  <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>End Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      placeholder="Enter End Date"
-                      value={this.state.endDate}
-                      name="endDate"
-                      onChange={this.handleChange}
-                    />
-                  </Form.Group>
-                </Form.Row>
+                
               </Form>
             </div>
           </Modal.Body>
