@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Modal, Button } from 'antd';
 
-
-
 export default class Editproject extends Component {
   constructor(props) {
     super(props);
@@ -16,42 +14,50 @@ export default class Editproject extends Component {
     }
   }
 
-//   componentDidMount() {
-//       axios.get('http://localhost:4000/business/edit/'+this.props.match.params.id)
-//           .then(response => {
-//               this.setState({ 
-//                 projectTitle : response.data.projectTitle, 
-//                 Description: response.data.Description,
-//                  });
-//           })
-//           .catch(function (error) {
-//               console.log(error);
-//           })
-//     }
+  //   componentDidMount() {
+  //       axios.get('http://localhost:4000/business/edit/'+this.props.match.params.id)
+  //           .then(response => {
+  //               this.setState({ 
+  //                 projectTitle : response.data.projectTitle, 
+  //                 Description: response.data.Description,
+  //                  });
+  //           })
+  //           .catch(function (error) {
+  //               console.log(error);
+  //           })
+  //     }
 
-    onChangeprojectTitle(e) {
+  onChangeprojectTitle(e) {
     this.setState({
-        projectTitle: e.target.value
+      projectTitle: e.target.value
     });
   }
   onChangeDescription(e) {
     this.setState({
       Description: e.target.value
-    })  
+    })
   }
-  
+
 
   onSubmit(e) {
     e.preventDefault();
     const obj = {
-        projectTitle: this.state.projectTitle,
-        Description: this.state.Description,
-      
+      projectTitle: this.state.projectTitle,
+      Description: this.state.Description,
+
     };
     // axios.post('http://localhost:4000/business/update/'+this.props.match.params.id, obj)
     //     .then(res => console.log(res.data));
-    
+
     // this.props.history.push('/index');
+
+    axios.post('http://localhost:4000/business/add', obj)
+        .then(res => console.log(res.data));
+    
+    this.setState({
+     projectTitle: this.state.projectTitle,
+      Description: this.state.Description,
+    })
   }
 
   showModal = () => {
@@ -74,43 +80,45 @@ export default class Editproject extends Component {
     });
   };
 
- 
+
   render() {
     return (
-        <div>
-            <Button className="aaa"  type="outline-secondary" onClick={this.showModal}>
-            <i class="fa fa-pencil-square-o fa-1x " aria-hidden="true"></i>
+      <div>
+        <Button className="aaa" type="outline-secondary" onClick={this.showModal}>
+          <i class="fa fa-pencil-square-o fa-1x " aria-hidden="true"></i>
         </Button>
-       
+
         <Modal
           title="Edit Project"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-        <div>
+          <div>
             <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                    <label>Project Title:  </label>
-                    <input 
-                      type="text" 
-                      placeholder="Enter the title"
-                      className="form-control" 
-                      value={this.state.projectTitle}
-                      onChange={this.onChangeprojectTitle}
-                      />
-                </div>
-                <div className="form-group">
-                    <label>Description: </label>
-                    <textarea type="text" 
-                    placeholder="Enter the description"
-                      className="form-control"
-                      value={this.state.Description}
-                      onChange={this.onChangeDescription}
-                      />
-                </div>
+              <div className="form-group">
+                <label>Project Title:</label>
+                &nbsp;&nbsp;
+                    <input
+                  type="text"
+                  placeholder="Enter the title"
+                  className="form-control"
+                  value={this.state.projectTitle}
+                  onChange={this.onChangeprojectTitle}
+                  style={{ width: "300px" }}
+                />
+              </div>
+              <div className="form-group">
+                <label>Description: </label>
+                <textarea type="text"
+                  placeholder="Enter the description"
+                  className="form-control"
+                  value={this.state.Description}
+                  onChange={this.onChangeDescription}
+                />
+              </div>
             </form>
-        </div>
+          </div>
         </Modal></div>
     )
   }

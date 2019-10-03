@@ -7,16 +7,16 @@ import Navbar from './Component/Navbar';
 import Footer from './Component/Footer'
 export default class App extends Component {
 
-  render(){
-  return (
-   
-    <div className = "file">
-       <BrowserRouter>
+  render() {
+    return (
+
+      <div className="file">
+        <BrowserRouter>
           <Navbar />
         </BrowserRouter>
         <Footer />
-    </div>
-  );
+      </div>
+    );
   }
 }
 

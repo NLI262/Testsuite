@@ -12,7 +12,7 @@
 //     }
 //   }
 
- 
+
 //   componentDidMount(){
 //     this.getChartData();
 //   }
@@ -32,7 +32,7 @@
 //       dataFromDB: res.data,
 //        })
 //     })
-    
+
 //     this.setState({
 //       chartData:{
 //         labels: ['passed', 'failed', 'notExecuted','blocked' ],
@@ -50,16 +50,16 @@
 //         ]
 //       }
 //     });
-    
+
 //   }
 
 //    render() {
-    
+
 //      return (
-           
+
 //         <div>
 //          <Chart chartData={this.state.chartData} /> 
-        
+
 //        </div>
 //      );
 //    }

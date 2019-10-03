@@ -8,26 +8,26 @@ import Overview from './Overview.js';
 import './Display.css'
 
 export default class Navbar extends Component {
- 
-  componentDidMount(){
+
+  componentDidMount() {
     this.myFunction();
   }
-    myFunction ()  {
+  myFunction() {
     var header = document.getElementById("kites");
     var btns = header.getElementsByClassName("btn");
-    var x = document.getElementById("myTopnav");
-    if (x.className === "kites") {
-      x.className += " responsive";
-    } else {
-      x.className = "kites";
-    }
+    // var x = document.getElementById("kites");
+    // if (x.className === "myTopnav") {
+    //   x.className += " responsive";
+    // } else {
+    //   x.className = "myTopnav";
+    // }
     for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
       });
-   }
+    }
   }
 
   render() {
@@ -37,23 +37,25 @@ export default class Navbar extends Component {
           <div >
             <h2>Testsuite management</h2>
             <nav className="navbar navbar-expand-lg navbar-light-blue bg-light" >
-              <div className = "myTopnav" id="kites" >
-              <ul className="navbar-nav mr-auto ">
-                <li className="nav-item"><Link to={'/Dashboard'} onClick={this.myFunction} className="nav-link"><a className="btn active">Dashboard</a></Link></li>
-                <li className="nav-item"><Link to={'/Overview'} onClick={this.myFunction}  className="nav-link" Primary><a className="btn">Overview</a></Link></li>
-                <li className="nav-item"><Link to={'/Testcase'} onClick={this.myFunction} className="nav-link"><a className="btn">Testcase</a></Link></li>
-                <li className="nav-item"><Link to={'/Testrun'} onClick={this.myFunction} className="nav-link"><a className="btn">Testrun</a></Link></li>
-                <li className="nav-item"><Link to={'/Viewalltestcase'} onClick={this.myFunction} className="nav-link"><a className="btn">History</a></Link></li>
-              </ul>
+              <div className="myTopnav" id="kites" >
+                <ul className="navbar-nav mr-auto ">
+                  <li className="nav-item"><Link to={'/Dashboard'} onClick={this.myFunction} className="nav-link"><a className="btn active" href="#Dashboard">Dashboard</a></Link></li>
+                  <li className="nav-item"><Link to={'/Overview'} onClick={this.myFunction} className="nav-link" ><a className="btn " href="#Overview">Overview</a></Link></li>
+                  <li className="nav-item"><Link to={'/Testcase'} onClick={this.myFunction} className="nav-link"><a className="btn " href="#Testcase">Testcase</a></Link></li>
+                  <li className="nav-item"><Link to={'/Testrun'} onClick={this.myFunction} className="nav-link"><a className="btn " href="#Testrun">Testrun</a></Link></li>
+                  <li className="nav-item"><Link to={'/Viewalltestcase'} onClick={this.myFunction} className="nav-link"><a className="btn " href="#Viewalltestcase">History</a></Link></li>
+                  {/* <li className="nav-item"><Link to={'/'} onClick={this.myFunction} className="nav-link"><a href="javascript:void(0);" onclick="myFunction()">
+                  </a></Link></li> */}
+                </ul>
               </div>
             </nav>
-            <hr />
+            <br />
             <Switch>
-              <Route  path='/Dashboard' component={Dashboard} />
-              <Route  path='/Overview' component={Overview} />
-              <Route path='/Testcase' component={Testcase} />
-              <Route path='/Testrun' component={Testrun} />
-              <Route path='/Viewalltestcase' component={Viewalltestcase} />
+              <Route exact path='/' component={Dashboard} />
+              <Route exact path='/Overview' component={Overview} />
+              <Route exact path='/Testcase' component={Testcase} />
+              <Route exact path='/Testrun' component={Testrun} />
+              <Route exact path='/Viewalltestcase' component={Viewalltestcase} />
             </Switch>
           </div>
         </Router>

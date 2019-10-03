@@ -13,12 +13,12 @@
 //     this.setState({
 //         chartData:this.props.chartData
 //     });
-   
+
 // }
-  
+
 //   render(){
-      
-      
+
+
 //       if(!this.props.chartData)
 //       {
 //           return(
@@ -28,7 +28,7 @@
 
 //     return (
 //       <div className="chart">
-        
+
 //        <Pie
 //           data={this.props.chartData}
 //           options={{
