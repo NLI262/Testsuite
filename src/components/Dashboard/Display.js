@@ -64,7 +64,7 @@ export default class Display extends React.Component {
 
   deleteProject(id) {
     if (window.confirm("Are you sure want to delete?")) {                     // delete method to delete the paticular project
-      fetch("https://cors-anywhere.herokuapp.com/http://dcfc0f8d.ngrok.io/TSM/project/delete/" + id +"/"+ this.state.id, {
+      fetch("https://cors-anywhere.herokuapp.com/http://55aa8090.ngrok.io/TSM/project/delete/" + id +"/"+ this.state.id, {
         method: "DELETE"
       }).then(response => {
         if (response.status === 200) {
@@ -87,7 +87,7 @@ export default class Display extends React.Component {
 
   
   handleSubmit = async data => {
-    await fetch("https://cors-anywhere.herokuapp.com/http://dcfc0f8d.ngrok.io/TSM/project/edit/"+this.state.id, {                                 // handle submit taken fom editproject file using props
+    await fetch("https://cors-anywhere.herokuapp.com/http://55aa8090.ngrok.io/TSM/project/edit/"+this.state.id, {                                 // handle submit taken fom editproject file using props
       method: "PUT",
       body: JSON.stringify({ ...data }),                               // put method in fetch to update state values 
       headers: { "Content-type": "application/json; charset=UTF-8" }
