@@ -6,6 +6,7 @@ import Testcase from './Testcase.js';
 import Viewalltestcase from './Viewalltestcase.js';
 import Overview from './Overview.js';
 import './Display.css'
+import HomePage from './Homepage/Homepage.js';
 
 export default class Navbar extends Component {
 
@@ -51,7 +52,8 @@ export default class Navbar extends Component {
             </nav>
             <br />
             <Switch>
-              <Route exact path='/' component={Dashboard} />
+              <Route exact path="/" component={HomePage}/>
+              <Route exact path='/dash' component={Dashboard} />
               <Route exact path='/Overview' component={Overview} />
               <Route exact path='/Testcase' component={Testcase} />
               <Route exact path='/Testrun' component={Testrun} />

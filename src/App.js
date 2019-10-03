@@ -12,6 +12,7 @@ export default class App extends Component {
 
       <div className="file">
         <BrowserRouter>
+        
           <Navbar />
         </BrowserRouter>
         <Footer />
